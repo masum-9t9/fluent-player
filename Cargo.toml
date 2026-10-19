@@ -1,0 +1,53 @@
+[package]
+name = "fluent_player"
+version = "0.0.1"
+edition = "2024"
+rust-version = "1.92"
+license = "GPL-3.0-only"
+description = "A modern, minimalist, native video player for Windows 11, built in Rust."
+
+[dependencies]
+# UI Toolkit - Fluent style is default since v1.16
+slint = { version = "1.18", features = ["raw-window-handle-06"] }
+raw-window-handle = "0.6"
+
+# Basic error handling + logging, needed from the very first "Hello Window" run
+anyhow = "1"
+log = "0.4"
+env_logger = "0.11"
+libloading = "0.8"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_System_LibraryLoader",
+    "Win32_UI_Controls",
+    "Win32_UI_Controls_Dialogs",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_Common",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+# --- Temporarily disabled until the libmpv dev/runtime files are set up. ---
+# Re-enabled in the "Player Core / libmpv integration" step.
+# libmpv2 = { version = "6.0", features = ["render"] }
+
+# --- Temporarily disabled until the Mica/Acrylic + custom title bar step. ---
+# windows = { version = "0.58", features = [
+#     "Win32_Foundation",
+#     "Win32_Graphics_Dwm",
+#     "Win32_UI_WindowsAndMessaging",
+#     "Win32_UI_Controls",
+#     "Win32_System_LibraryLoader",
+# ] }
+
+[build-dependencies]
+slint-build = "1.18"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+panic = "abort"
+codegen-units = 1

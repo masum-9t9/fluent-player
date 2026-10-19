@@ -1,0 +1,29 @@
+1 ICON "assets/windows/fluent-player.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,1,0
+ PRODUCTVERSION 0,0,1,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x00040004L
+ FILETYPE 0x00000001L
+ FILESUBTYPE 0x00000000L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Fluent Player\0"
+            VALUE "FileDescription", "A modern Windows video player\0"
+            VALUE "FileVersion", "0.0.1\0"
+            VALUE "InternalName", "FluentPlayer\0"
+            VALUE "OriginalFilename", "FluentPlayer.exe\0"
+            VALUE "ProductName", "Fluent Player\0"
+            VALUE "ProductVersion", "0.0.1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

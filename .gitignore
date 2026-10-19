@@ -1,0 +1,8 @@
+/target
+/dist/
+/third_party/mpv/libmpv-2.dll
+/release/*.exe
+/release/*.zip
+/release/libmpv-2.dll
+/release/portable/FluentPlayer.exe
+/release/portable/libmpv-2.dll
